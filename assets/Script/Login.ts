@@ -28,6 +28,9 @@ export default class Login extends cc.Component {
     @property(Button)
     btn_skin: Button = null;
 
+    @property(Button)
+    btn_shop: Button = null;
+
     @property(cc.Label)
     txt_level: cc.Label = null;
 
@@ -143,6 +146,11 @@ export default class Login extends cc.Component {
         this.btn_skin.onTouchEnd(()=>{
             console.log("打开skin",UIPath.ChooseSkinLayer);
             LoadFactory.loadPrefabPanel({path: UIPath.ChooseSkinLayer});
+        });
+
+        this.btn_shop.onTouchEnd(()=>{
+            console.log("click")
+            LoadFactory.loadPrefabPanel({path: UIPath.ShopLayer});
         });
 
     }

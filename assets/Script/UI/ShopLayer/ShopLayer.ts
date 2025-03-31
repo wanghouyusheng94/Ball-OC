@@ -50,12 +50,17 @@ export default class ShopLayer extends cc.Component {
     }
 
     start () {
+        this.txt_gold.string = `${Global.userInfo.gold}`;
         this.list.numItems = this._purchaseData.length;
+        this.btn_close.onTouchEnd(()=>{
+            console.log("ckick");
+            this.node.destroy();
+        })
     }
 
     onListenRender(node: cc.Node, index: number) {
         let item = node.getComponent(ShopItem);
-        item.setPurchaseData(this._purchaseData[index]);
+        item.setPurchaseData(index,this._purchaseData[index]);
     }
 
     // update (dt) {}

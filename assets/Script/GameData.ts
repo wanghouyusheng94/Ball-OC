@@ -62,6 +62,7 @@ export let UIPath = {
     ChooseSkinLayer: "prefab/ChooseSkinLayer",
     ContactLayer: "prefab/ContactLayer",
     PolicyLayer: "prefab/PolicyLayer",
+    ShopLayer: "prefab/ShopLayer",
 }
 
 export let AniPath = {
