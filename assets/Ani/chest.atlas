@@ -1,0 +1,132 @@
+
+chest.png
+size: 4096,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+light1
+  rotate: false
+  xy: 2074, 2
+  size: 373, 362
+  orig: 373, 362
+  offset: 0, 0
+  index: -1
+light2
+  rotate: false
+  xy: 2592, 534
+  size: 220, 112
+  orig: 220, 112
+  offset: 0, 0
+  index: -1
+lv1_box
+  rotate: false
+  xy: 2, 648
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv1_top1
+  rotate: false
+  xy: 2, 366
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv1_top2
+  rotate: false
+  xy: 520, 648
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv2_box
+  rotate: false
+  xy: 2, 84
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv2_top1
+  rotate: false
+  xy: 520, 366
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv2_top2
+  rotate: false
+  xy: 1038, 648
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv3_box
+  rotate: false
+  xy: 520, 84
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv3_top1
+  rotate: false
+  xy: 1038, 366
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv3_top2
+  rotate: false
+  xy: 1556, 648
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv4_box
+  rotate: false
+  xy: 1038, 84
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv4_top1
+  rotate: false
+  xy: 1556, 366
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv4_top2
+  rotate: false
+  xy: 2074, 648
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv5_box
+  rotate: false
+  xy: 1556, 84
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv5_top1
+  rotate: false
+  xy: 2074, 366
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+lv5_top2
+  rotate: false
+  xy: 2592, 648
+  size: 516, 280
+  orig: 516, 280
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 3110, 876
+  size: 49, 52
+  orig: 49, 52
+  offset: 0, 0
+  index: -1

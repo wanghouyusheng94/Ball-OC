@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "1e95e3a6-f420-4920-ad14-90be5cbbb919",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 514,
+  "height": 32,
+  "platformSettings": {},
+  "subMetas": {
+    "Watch a video to get 20 coins": {
+      "ver": "1.0.6",
+      "uuid": "62b3e964-1a25-44b9-b021-93ce0e2c6e56",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "1e95e3a6-f420-4920-ad14-90be5cbbb919",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -0.5,
+      "trimX": 4,
+      "trimY": 4,
+      "width": 506,
+      "height": 25,
+      "rawWidth": 514,
+      "rawHeight": 32,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
