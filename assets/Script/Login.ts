@@ -1,5 +1,3 @@
-
-import AppBury, { UpLoadEvent } from "./AppBury";
 import { Button } from "./Button";
 import Success from "./Game/Success";
 import { ConfigPath, Sound, StorageName, UIPath } from "./GameData";
@@ -54,14 +52,6 @@ export default class Login extends cc.Component {
 
     async start() {
         if(Global.openCount == 0) {
-
-            if((StorageUtils.getStorage(StorageName.first)??false)) {
-            } else {
-                AppBury.UpLoad({parent: UpLoadEvent.FirstOpen});
-                StorageUtils.setStorage(StorageName.first, true);
-            } 
-            
-            AppBury.UpLoad({parent: UpLoadEvent.AppOpen});
 
             Global.openCount++;
             SdkListen.init();

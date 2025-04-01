@@ -15,7 +15,6 @@ export const SpritePath = {
 }
 
 export const StorageName = {
-    first: `first`,
     userInfo: "userInfo",
     bgmVolume: "bgmVolume",
     effectVolume: "effectVolume",

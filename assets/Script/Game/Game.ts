@@ -1,5 +1,3 @@
-
-import AppBury, { UpLoadEvent } from "../AppBury";
 import { Button } from "../Button";
 import { AniPath, ConfigPath, EClickAdsPos, Sound, StorageName, UIPath } from "../GameData";
 import { Global } from "../Global";
@@ -140,10 +138,8 @@ export default class Game extends cc.Component {
 
     showAdsCall() {
         if(Global.adsType == EClickAdsPos.gameRefresh) {
-            AppBury.UpLoad({parent: UpLoadEvent.BoosterUsed, index: 0});
             cc.director.loadScene("Game");
         } else if(Global.adsType == EClickAdsPos.returnLogin) {
-            AppBury.UpLoad({parent: UpLoadEvent.LevelFail});
             cc.director.loadScene("Login");
             SdkApi.hideBanner();
         } else if(Global.adsType == EClickAdsPos.gameAddBottle) {
@@ -155,8 +151,6 @@ export default class Game extends cc.Component {
     }
 
     async start() {
-
-        AppBury.UpLoad({parent: UpLoadEvent.LevelStart});
 
         Global.game_node = this.node;
         this.refresh();
@@ -173,7 +167,6 @@ export default class Game extends cc.Component {
                 SdkApi.showInterstitial();
                 return;
             }
-            AppBury.UpLoad({parent: UpLoadEvent.BoosterUsed, index: 0});
             cc.director.loadScene("Game");
         });
 
@@ -183,7 +176,6 @@ export default class Game extends cc.Component {
                 SdkApi.showInterstitial();
                 return;
             }
-            AppBury.UpLoad({parent: UpLoadEvent.LevelFail});
             cc.director.loadScene("Login");
         });
 
@@ -333,7 +325,6 @@ export default class Game extends cc.Component {
     }
 
     addBottle() {
-        AppBury.UpLoad({parent: UpLoadEvent.BoosterUsed, index: 2});
         let posArrAndScale = this.getPositionAndScale(this.layout_bottle.childrenCount + 1,this._ballCount);
         const bottleNode = cc.instantiate(this.prefab_bottle);
         this.layout_bottle.addChild(bottleNode);
@@ -583,8 +574,6 @@ export default class Game extends cc.Component {
         })
         if (pass) {
 
-            AppBury.UpLoad({parent: UpLoadEvent.LevelComplete});
-
             if(Global.isOpenAds)
             SdkApi.hideBanner();
             if(this._isSpecial) {
@@ -640,7 +629,6 @@ export default class Game extends cc.Component {
     }
 
     rollBack(oper: TOper) {
-        AppBury.UpLoad({parent: UpLoadEvent.BoosterUsed, index: 1});
         let { beginIndex, endIndex, moveCount } = oper;
         let beginCom = this.layout_bottle.children[beginIndex].getComponent(Bottle);
         let endCom = this.layout_bottle.children[endIndex].getComponent(Bottle);

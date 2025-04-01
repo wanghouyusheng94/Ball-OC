@@ -32,6 +32,10 @@ class SdkListenInstance {
                 case 3:
                     EventUtil.emit(GameEventType.SHOW_ADS);
                     break;
+                case 4:
+                    console.log("------购买商品", json);
+                    EventUtil.emit(GameEventType.BUY_ITEM);
+                    break;
             }
         }
 
