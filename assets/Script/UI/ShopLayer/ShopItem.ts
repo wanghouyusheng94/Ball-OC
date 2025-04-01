@@ -1,5 +1,6 @@
 
 import { Button } from "../../Button";
+import SdkApi from "../../SDK/SdkApi";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -28,7 +29,7 @@ export default class ShopItem extends cc.Component {
 
     start () {
         this.btn_buy.onTouchEnd(()=>{
-            console.log("购买", this._index);
+            SdkApi.purchase(`${this._index}`);
         });
     }
 
