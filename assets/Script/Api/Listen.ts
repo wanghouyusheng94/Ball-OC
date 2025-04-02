@@ -2,21 +2,21 @@
 import EventUtil from "../util/EventUtils";
 import GameEventType from "../util/GameEventType";
 
-class SdkListenInstance {
+class ListenInstance {
 
-    public static Instance: SdkListenInstance = new SdkListenInstance(); 
+    public static Instance: ListenInstance = new ListenInstance(); 
 
     init() {
-        cc.sdk = {
-            flowSdkCallback: null
+        cc.api = {
+            flowCallback: null
         }
 
         //定义sdk回调
-        cc.sdk.flowSDKCallback = (event, json) => {
-            console.log('sdk 回调事件： ' + event)
-            console.log('sdk 回调数据： ' + json)
+        cc.api.flowCallback = (event, json) => {
+            console.log('api 回调事件： ' + event)
+            console.log('api 回调数据： ' + json)
             let jsonStr = JSON.stringify(json)
-            console.log('sdk 回调数据string： ' + jsonStr)
+            console.log('api 回调数据string： ' + jsonStr)
             switch (event) {
                 case 0:
                     console.log("------js初始化回调成功");
@@ -34,7 +34,7 @@ class SdkListenInstance {
                     break;
                 case 4:
                     console.log("------购买商品", json);
-                    EventUtil.emit(GameEventType.BUY_ITEM);
+                    EventUtil.emit(GameEventType.BUY_ITEM, json.index);
                     break;
             }
         }
@@ -43,4 +43,4 @@ class SdkListenInstance {
 
     // update (dt) {}
 }
-export const SdkListen = SdkListenInstance.Instance;
+export const Listen = ListenInstance.Instance;

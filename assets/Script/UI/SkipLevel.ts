@@ -4,7 +4,7 @@ import { EClickAdsPos, StorageName } from "../GameData";
 import { Button } from "../Button";
 import { Global } from "../Global";
 import { StorageUtils } from "../util/StorageUtils";
-import SdkApi from "../SDK/SdkApi";
+import Api from "../Api/Api";
 import EventUtil from "../util/EventUtils";
 import GameEventType from "../util/GameEventType";
 
@@ -47,7 +47,7 @@ export default class SkipLevel extends cc.Component {
                     this.skipGame();
                 } else {
                     Global.adsType = EClickAdsPos.goldUnlockSkin;
-                    SdkApi.showReward();
+                    Api.showReward();
                 }
             } else {
                 this.skipGame();

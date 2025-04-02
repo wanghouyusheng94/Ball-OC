@@ -8,7 +8,7 @@
 import { Button } from "../Button";
 import { EClickAdsPos, Sound, StorageName } from "../GameData";
 import { Global } from "../Global";
-import SdkApi from "../SDK/SdkApi";
+import Api from "../Api/Api";
 import { AudioManager } from "../util/AudioUtils";
 import Common from "../util/Common";
 import EventUtil from "../util/EventUtils";
@@ -95,7 +95,7 @@ export default class SpecialLevel extends cc.Component {
 
             if(Global.isOpenAds) {
                 Global.adsType = EClickAdsPos.specialAddGold;
-                SdkApi.showReward();
+                Api.showReward();
             } else {
                 this.playAni();
             }

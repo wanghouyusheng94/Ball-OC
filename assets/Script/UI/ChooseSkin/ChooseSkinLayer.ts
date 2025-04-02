@@ -3,7 +3,7 @@ import { Button } from "../../Button";
 import List from "../../Component/List/List";
 import { EClickAdsPos, StorageName } from "../../GameData";
 import { Global } from "../../Global";
-import SdkApi from "../../SDK/SdkApi";
+import Api from "../../Api/Api";
 import EventUtil from "../../util/EventUtils";
 import GameEventType from "../../util/GameEventType";
 import { StorageUtils } from "../../util/StorageUtils";
@@ -91,7 +91,7 @@ export default class ChooseSkinLayer extends cc.Component {
 
         this.btn_lookAds.onTouchEnd(()=>{
             Global.adsType = EClickAdsPos.goldUnlockSkin;
-            SdkApi.showReward();
+            Api.showReward();
         });
 
         this.btn_close2.onTouchEnd(()=>{

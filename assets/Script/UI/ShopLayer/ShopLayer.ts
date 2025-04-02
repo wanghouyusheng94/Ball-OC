@@ -40,6 +40,7 @@ export default class ShopLayer extends cc.Component {
 
     buyItem(index: number) {
         console.log("购买", index);
+        Global.userInfo.gold += index;
         this.refresh();
     }
 

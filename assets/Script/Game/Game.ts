@@ -1,7 +1,7 @@
 import { Button } from "../Button";
 import { AniPath, ConfigPath, EClickAdsPos, Sound, StorageName, UIPath } from "../GameData";
 import { Global } from "../Global";
-import SdkApi from "../SDK/SdkApi";
+import Api from "../Api/Api";
 import { AudioManager } from "../util/AudioUtils";
 import EventUtil from "../util/EventUtils";
 import GameEventType from "../util/GameEventType";
@@ -125,7 +125,7 @@ export default class Game extends cc.Component {
 
     protected onLoad(): void {
         if(Global.isOpenAds)
-        SdkApi.showBanner();
+        Api.showBanner();
     }
 
     protected onEnable(): void {
@@ -141,7 +141,7 @@ export default class Game extends cc.Component {
             cc.director.loadScene("Game");
         } else if(Global.adsType == EClickAdsPos.returnLogin) {
             cc.director.loadScene("Login");
-            SdkApi.hideBanner();
+            Api.hideBanner();
         } else if(Global.adsType == EClickAdsPos.gameAddBottle) {
             this.addBottle();
         } else if(Global.adsType == EClickAdsPos.gameRetract) {
@@ -164,7 +164,7 @@ export default class Game extends cc.Component {
         this.btn_refresh.onTouchEnd(() => {
             if(Global.isOpenAds && Math.random()*10 > 3.5) {
                 Global.adsType = EClickAdsPos.gameRefresh;
-                SdkApi.showInterstitial();
+                Api.showInterstitial();
                 return;
             }
             cc.director.loadScene("Game");
@@ -173,7 +173,7 @@ export default class Game extends cc.Component {
         this.btn_return.onTouchEnd(() => {
             if(Global.isOpenAds && Math.random()*10 > 3.5) {
                 Global.adsType = EClickAdsPos.returnLogin;
-                SdkApi.showInterstitial();
+                Api.showInterstitial();
                 return;
             }
             cc.director.loadScene("Login");
@@ -195,7 +195,7 @@ export default class Game extends cc.Component {
                         this.rollBack(oper);
                     } else {
                         Global.adsType = EClickAdsPos.gameRetract;
-                        SdkApi.showReward();
+                        Api.showReward();
                     }
                 } else {
                     this.rollBack(oper);
@@ -229,7 +229,7 @@ export default class Game extends cc.Component {
                     return;
                 } 
                 Global.adsType = EClickAdsPos.gameAddBottle;
-                SdkApi.showReward();
+                Api.showReward();
                 
             } else {
                 this.addBottle();
@@ -575,7 +575,7 @@ export default class Game extends cc.Component {
         if (pass) {
 
             if(Global.isOpenAds)
-            SdkApi.hideBanner();
+            Api.hideBanner();
             if(this._isSpecial) {
                 LoadFactory.loadPrefabPanel({path:UIPath.SpecialLevel, ani:OpenPrefabAni.Scale});
             } else {

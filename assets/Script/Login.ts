@@ -2,15 +2,15 @@ import { Button } from "./Button";
 import Success from "./Game/Success";
 import { ConfigPath, Sound, StorageName, UIPath } from "./GameData";
 import { Global } from "./Global";
-import SdkApi from "./SDK/SdkApi";
-import { SdkListen } from "./SDK/SdkListen";
+import Api from "./Api/Api";
+import { Listen } from "./Api/Listen";
 import { AudioManager } from "./util/AudioUtils";
 import LoadFactory, { OpenPrefabAni } from "./util/LoadFactory";
 import { StorageUtils } from "./util/StorageUtils";
 
 
 const {ccclass, property} = cc._decorator;
-console.log = function() {};
+// console.log = function() {};
 @ccclass
 export default class Login extends cc.Component {
     
@@ -54,8 +54,8 @@ export default class Login extends cc.Component {
         if(Global.openCount == 0) {
 
             Global.openCount++;
-            SdkListen.init();
-            SdkApi.init();
+            Listen.init();
+            Api.init();
             Global.playBgm = StorageUtils.getStorage(StorageName.bgmVolume) ?? true;
             Global.playEffect = StorageUtils.getStorage(StorageName.effectVolume) ?? true;
             Global.userInfo = StorageUtils.getStorageJson(StorageName.userInfo) ?? Global.userInfo;
@@ -91,12 +91,12 @@ export default class Login extends cc.Component {
             // node.getComponent(Success).setPass(false);
         })
 
-        // SdkApi.showBanner();
-        // SdkApi.preloadReward();
+        // Api.showBanner();
+        // Api.preloadReward();
         // this.scheduleOnce(()=>{
-        //     SdkApi.hideBanner();
+        //     Api.hideBanner();
             
-        //     SdkApi.showReward();
+        //     Api.showReward();
         // },5);
 
         
@@ -109,15 +109,15 @@ export default class Login extends cc.Component {
     initBtn() {
 
         this.node_ads.getComponent(Button).onTouchEnd(()=>{
-            SdkApi.showReward();
+            Api.showReward();
         });
 
         this.node_hideBanner.getComponent(Button).onTouchEnd(()=>{
-            SdkApi.hideBanner();
+            Api.hideBanner();
         });
 
         this.node_showBanner.getComponent(Button).onTouchEnd(()=>{
-            SdkApi.showBanner();
+            Api.showBanner();
         });
 
         this.btn_set.onTouchEnd(()=>{

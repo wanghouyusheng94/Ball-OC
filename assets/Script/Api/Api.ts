@@ -4,7 +4,7 @@ import GameEventType from "../util/GameEventType";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class SdkApi {
+export default class Api {
     static OCPath: string = 'AppController';
     
     static init() {
