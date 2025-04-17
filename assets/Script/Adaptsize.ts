@@ -13,19 +13,28 @@ export default class Adaptsize extends cc.Component {
 
     start () {
 
-        this.scheduleOnce(()=>{
-            if(this.node.height/this.node.width >= (1334/750)) {
-                this.node.getComponent(cc.Canvas).fitHeight = false;
-                this.node.getComponent(cc.Canvas).fitWidth = true;
+        console.log(`adaptsize`,this.node.name);
 
-                console.log("竖屏")
+        this.scheduleOnce(()=>{
+
+            let width = this.node.width;
+            let height = this.node.height;
+
+            let canvas = this.node.getComponent(cc.Canvas);
+
+            if(height*750 > width * 1334) {
+                canvas.fitHeight = false;
+                canvas.fitWidth = true;
+
+                console.log("适配宽度")
 
             } else {
-                this.node.getComponent(cc.Canvas).fitWidth = false;
-                this.node.getComponent(cc.Canvas).fitHeight = true;
-
-                console.log("横屏")
+                canvas.fitHeight = true;
+                canvas.fitWidth = false;
+                console.log("适配高度");
             }
+            this.node.getComponent(cc.Widget).updateAlignment();
+            //this.node.getChildByName("Login").getComponent(cc.Widget).updateAlignment();
         })
     }
 
